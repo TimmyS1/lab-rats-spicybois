@@ -28,7 +28,7 @@ shop.shoebox = Container("shoebox under the sink",["a knife","soap"])
 shop.cardboardbox = Container("a locked container in front of you",["slingshot"])
 
 # Create an interactive item that's show in a room (not hidden in a container) with create_room_item()
-kitchen.create_room_item("rat")
+shop.create_room_item("rat")
 
 
 # Small Office
@@ -56,17 +56,17 @@ supplycloset = Room("Supply Closet","A small dark room with a musty smell. On on
 locked = Room("locked","")
 
 # Connect rooms. These are one-way connections.
-kitchen.link_room(locked, "EAST")
-kitchen.link_room(smalloffice, "SOUTH")
-kitchen.link_room(locked, "WEST")
+shop.link_room(locked, "EAST")
+shop.link_room(smalloffice, "SOUTH")
+shop.link_room(locked, "WEST")
 supplycloset.link_room(smalloffice, "EAST")
-smalloffice.link_room(kitchen, "NORTH")
+smalloffice.link_room(shop, "NORTH")
 smalloffice.link_room(lab, "EAST")
 smalloffice.link_room(locked, "SOUTH")
 smalloffice.link_room(supplycloset, "WEST")
 lab.link_room(locked, "SOUTH")
 lab.link_room(smalloffice, "WEST")
-current_room = kitchen
+current_room = shop
 
 # Set up characters
 dmitry = Enemy("Dmitry", "A smelly zombie")
